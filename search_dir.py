@@ -1,5 +1,5 @@
 import os,re,zipfile
-'''Quick script that will back up files of particular '''
+'''Quick script that will back up files of given extension and file path '''
 
 def search_parse_zip(path,file_extension,backup_file_name):
     is_match = []
