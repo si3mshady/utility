@@ -1,4 +1,7 @@
 import os,re,zipfile
+from PIL import Image
+from pytesseract import image_to_string
+
 '''Quick script that will back up files of given extension and file path '''
 
 def search_parse_zip(path,file_extension,backup_file_name):
