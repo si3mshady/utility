@@ -27,8 +27,6 @@ class Mainframe(ttk.Frame):
 
     def shooter(self): #retrieves the ttk user entered value for file name
         self.shot = niceShot.screenshot(str(self.filename.get())) #retrieve the 
-      #  self.gui_button = tk.Button(mainframe, text='Oh,Snap!',command=shooter)
-      #  self.gui_button.place(x=25,y=25)
 
 
 if __name__=="__main__":
