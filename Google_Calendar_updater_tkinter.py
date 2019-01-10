@@ -9,7 +9,7 @@ version = 'v3'
 svc_gcp  = mgs(scope,secret,service,version)   
 
 def set_google_calendar(start_year,end_year,start_month,end_month,start_day,end_day,start_hour,end_hour,start_minute,end_minute,start_seconds,end_seconds,description):
-   start = datetime.datetime(start_year,start_month,start_day,end_day,start_hour,start_minute,start_seconds).isoformat()
+   start = datetime.datetime(start_year,start_month,start_day,start_hour,start_minute,start_seconds).isoformat()
    end = datetime.datetime(end_year,end_month,end_day,end_hour,end_minute,end_seconds).isoformat()
    desc  = description
    event = {'description':desc,'start':{'dateTime': start, 'timeZone': 'America/Chicago' },'end':{'dateTime': end, 'timeZone':'America/Chicago'}}
@@ -68,3 +68,4 @@ button = tk.Button(frame,text="Set Calendar", command=start,fg="blue").grid(row=
 
 root.mainloop()
 
+#1-10-19 Created a time management tool for inserting events into Google Calendar.  Elliott Arnold  = Si3mshady
