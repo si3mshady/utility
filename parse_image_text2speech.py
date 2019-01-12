@@ -37,4 +37,4 @@ if __name__ == '__main__':
     begin()
 
 #In 2018 I learned how to code in python3  Happy New Year's Eve  12-31-18   si3mshady = El AD 
-#updated with image rendering and text to speech capibility 1-12-19  si3mshady = El AD 
+#updated with image rendering and text to speech capability 1-12-19  si3mshady = El AD 
