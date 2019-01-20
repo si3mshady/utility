@@ -49,4 +49,4 @@ if __name__=="__main__":
 	root_window.mainloop()
 
 
-#python3 tkinter practice. Brick Tamland weather data script modified with GUI   1-19-18
+#python3 tkinter practice. Brick Tamland weather data script modified with GUI   1-19-19
