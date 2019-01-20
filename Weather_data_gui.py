@@ -1,4 +1,4 @@
-import requests,shelve
+import requests
 import tkinter as tk 
 from tkinter import ttk 
 from weather_data import Brick_Tamland
