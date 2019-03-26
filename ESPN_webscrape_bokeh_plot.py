@@ -14,7 +14,7 @@ for current_year in year:
     html_soup=bs4(soup,'html.parser')
 
     table_rows=html_soup.findAll('tr')[1:]
-    player_table_data=[[i.text for i in table_rows[x] ] for x in range(len(tr)) ] #extracts all table data from tr attribute
+    player_table_data=[[i.text for i in table_rows[x] ] for x in range(len(table_rows)) ] #extracts all table data from tr attribute
     player_names_lc=[i.text.strip() for i in html_soup.findAll('a') if 'http://www.espn.com/nba/player/' in i['href']] #locate matching tags with href attr
     column_names_lc=[cn.text for cn in html_soup.findAll('td',limit=12)] #retrieve column headers for dataframe
 
