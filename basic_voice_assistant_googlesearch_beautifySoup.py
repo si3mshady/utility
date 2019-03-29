@@ -38,7 +38,7 @@ def begin():
             break                 
         ggr=GetGoogleResponse(speech_to_text)
         response=ggr.fetch_response()
-        response=re.sub(r'(https\S*)','',response)  #use regular expressions to clean up response.  Strip away any http string that may appear in response 
+        response=re.sub(r'(http\S*)','',response)  #use regular expressions to clean up response.  Strip away any http string that may appear in response 
         machine_speak(dialogue=response)
         print(response)
 
