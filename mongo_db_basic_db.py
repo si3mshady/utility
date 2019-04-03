@@ -83,4 +83,4 @@ def main():
 
 if __name__=="__main__":
         main()                
-#Learning the basics of MongoDB with pymondo- Inserting Binary objects into a database  4-3-19
+#Learning the basics of MongoDB with pymondo- Inserting Binary objects into a database Elliott Arnold  4-3-19 
