@@ -1,0 +1,55 @@
+import tweepy,time
+
+FILE_1='twitter_api_access.txt'
+FILE_2='last_twitter_id'
+
+def get_last_status_id():
+    with open(FILE_2) as go_getter:
+        status_id=go_getter.read().strip()
+    return status_id
+
+def set_last_status_id(status_id):
+    with open(FILE_2,'w') as go_setter:
+        go_setter.write(status_id)
+    return 
+
+with open(FILE_1) as twitter:
+    data = twitter.readlines()
+    data = [val.strip() for val in data]
+
+
+CLIENT_KEY = data[0]
+CLIENT_SECRET = data[1]
+ACCESS_KEY = data[2]
+ACCESS_SECRET = data[3]
+
+auth = tweepy.OAuthHandler(CLIENT_KEY,CLIENT_SECRET)
+auth.set_access_token(ACCESS_KEY,ACCESS_SECRET)
+twitter_api = tweepy.API(auth)
+
+def update_twitter_feed():    
+    #locate_twitter_user   convert object to dictionary to extract and manipluate data 
+    api_result=twitter_api.search_users('siemplify',1,1)
+    result_dictionary=api_result[0].__dict__
+    user_id=result_dictionary['id']
+    user_name=result_dictionary['screen_name']
+    print('Searching for {} twitter updates ...'.format(user_name))
+
+    #get list timeline status
+    last_timeline_status_id=get_last_status_id()    
+    timeline_status=twitter_api.user_timeline(id=user_id,since_id=int(last_timeline_status_id))    
+    try:
+        timeline_dict=timeline_status[0].__dict__
+        timeline_status_id=timeline_dict['id']
+        set_last_status_id(str(timeline_status_id))
+        twitter_api.retweet(timeline_status_id)
+        print('A new retweet has been added to your feed from {}!'.format(user_name))
+    except:
+        IndexError
+        print('No current updates for {}...!'.format(user_name))
+
+while True:
+    update_twitter_feed()
+    time.sleep(3600)
+
+#twitter/tweepy api practice with python3    Elliott Arnold  aka si3mshady 4-10-19   
