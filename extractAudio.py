@@ -19,4 +19,6 @@ source = Extract_Audio(vid,save_as)
 source.extract_sound()
 
 
+
 #created a small python script from the moviepy lib  for extracting and saving audio from video source 5-17-19
+#Elliott Arnold 
